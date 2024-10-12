@@ -1,15 +1,13 @@
-import "./App.css";
-import Button from "@mui/material/Button";
-
-
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/700.css";
+import StartPage from "./pages/start/Start";
 function App() {
   return (
     <>
-
-        <Button variant="contained" >
-          Get Started
-        </Button>
-
+      <StartPage />
+   
     </>
   );
 }

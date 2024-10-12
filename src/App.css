@@ -1,0 +1,12 @@
+:root {
+  /* Основні кольори */
+  --main-bg-color: #fff9c4;
+  --pastel-blue: #b3e5fc;
+  --light-green: #c8e6c9;
+  --cream: #fff3e0;
+  --main-text-color: #1d1b20;
+  /* Акцентні кольори */
+  --orange: #ffb74d;
+  --coral: #ff6f61;
+  --main-color-accept: #3B82F6;
+}
