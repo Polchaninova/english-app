@@ -3,8 +3,18 @@ import React, { useState } from "react";
 import InputTextFields from "../../components/Input/Input";
 import Select from "../../components/Select/Select";
 import List from "../../components/List/List";
+import topics from "../../data/Data";
 
 const TopicList = () => {
+  const [selectedTopic, setSelectedTopic] = useState('');
+
+  const handleTopicChange = (e) => {
+   setSelectedTopic(e.target.value);
+  };
+  const displayedTopics = selectedTopic
+    ? topics.filter((topic) => topic.id === selectedTopic)
+    : topics;
+  console.log(displayedTopics);
 
   return (
     <>
@@ -15,16 +25,12 @@ const TopicList = () => {
         What topic do you want to learn?
       </Typography>
       <div style={{ width: "100%" }}>
-        <Box
-          sx={{
-            display: "grid",
-            gap: 1,
-            gridTemplateColumns: "repeat(2, 1fr)",
-          }}
-        >
-          <Select />
-        </Box>
-        <List />
+        <Select
+          handleChange={handleTopicChange}
+          selectedTopic={selectedTopic}
+          topics={topics}
+        />
+        <List displayed={displayedTopics} />
       </div>
     </>
   );

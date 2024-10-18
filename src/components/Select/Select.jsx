@@ -5,9 +5,8 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import Box from "@mui/material/Box"; // Add this import
+import Box from "@mui/material/Box";
 
-import DataTopic from '../../data/Data'
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -18,49 +17,103 @@ const MenuProps = {
     },
   },
 };
-
-
-function getStyles(name, topicName, theme) {
+function getStyles(topic, selectedTopic, theme) {
   return {
-    fontWeight: topicName.includes(name)
+    fontWeight: selectedTopic.includes(topic)
       ? theme.typography.fontWeightMedium
       : theme.typography.fontWeightRegular,
   };
 }
-
-export default function SelectTopic() {
-
+function SelectTopic({ handleChange, selectedTopic, topics }) {
   const theme = useTheme();
-  const [topicName, setTopicName] = React.useState([]);
-
-  const handleChange = (event) => {
-    setTopicName(event.target.value);
-  };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl sx={{ m: 1, width: 250 }}>
-        <InputLabel id="demo-multiple-name-label">Topic</InputLabel>
+    <>
+      <h3>Choose a topic:</h3>
+
+      <FormControl sx={{ m: 1, width: 300 }}>
+        <InputLabel id="demo-multiple-name-label">topic</InputLabel>
         <Select
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
-          multiple
-          value={topicName}
+          // multiple
+          value={selectedTopic}
           onChange={handleChange}
-          input={<OutlinedInput label="Name" />}
+          input={<OutlinedInput label="Topic" />}
           MenuProps={MenuProps}
         >
-          {DataTopic.map((name) => (
+          {topics.map((topic, index) => (
             <MenuItem
-              key={name.id}
-              value={name.title}
-              style={getStyles(name.title, topicName, theme)}
+              key={index}
+              value={topic.id}
+              style={getStyles(topic, selectedTopic, theme)}
             >
-              {name.title}
+              {topic.title}
             </MenuItem>
           ))}
         </Select>
       </FormControl>
-    </Box>
+    </>
   );
 }
+export default SelectTopic;
+
+
+
+
+
+
+
+
+
+
+
+     {
+       /* <select onChange={handleChange} value={selectedTopic}>
+        <option value="">--Please choose an option--</option>
+        {topics.map((topic, index) => (
+          <option key={index} value={topic.id}>
+            {topic.title}
+          </option>
+        ))}
+      </select> */
+     }
+     {
+       /* native-select */
+     }
+     {
+       /* <FormControl sx={{ m: 1, minWidth: 120, maxWidth: 300 }}>
+        <InputLabel shrink htmlFor="select-multiple-native">
+          Native
+        </InputLabel>
+        <Select
+          multiple
+          native
+          value={value}
+          onChange={handleChange}
+          label="Native"
+          inputProps={{
+            id: "select-multiple-native",
+          }}
+        >
+          {topics.map((topic, index) => (
+            <option key={index} value={topic.id}>
+              {topic.title}
+            </option>
+          ))}
+        </Select>
+      </FormControl> */
+     }
+     {
+       /*! first simple */
+     }
+     {
+       /* <select onChange={handleChange} value={value}>
+        <option value="">--Please choose an option--</option>
+        {topics.map((topic, index) => (
+          <option key={index} value={topic.id}>
+            {topic.title}
+          </option>
+        ))}
+      </select> */
+     }

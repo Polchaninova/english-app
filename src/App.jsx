@@ -56,9 +56,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <StyledBox>
-          <HandleFilter />
+          {/* <HandleFilter /> */}
           {/* <StartPage /> */}
-          {/* <TopicList /> */}
+          <TopicList />
         </StyledBox>
       </ThemeProvider>
     </>

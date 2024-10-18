@@ -1,24 +1,20 @@
 import React, { useState } from "react";
-import dataLesson from "../../data/Data";
-import { Box } from "@mui/material";
+// import { Box } from "@mui/material";
 
-const List = (topicName) => {
-  const filterTopics = dataLesson.filter((topic)=>topic.id === topicName)
-  console.log(filterTopics);
+const List = ({displayed}) => {
 
   return (
     <>
-      <h3>All topic</h3>
+      <h3>Filtered a topic:</h3>
       <ul>
-        {dataLesson.map((topic, topicIndex) => (
+        {displayed.map((topic, topicIndex) => (
           <li key={topicIndex}>
-            <h4>{topic.title}</h4> //1
+            <h4>{topic.title}</h4>
             <ul>
               {topic.lessons.map((lesson, lessonIndex) => (
                 <li key={lessonIndex}>
-                  <p>Lesson ID: {lesson.id}</p>
-                  <p>Lesson Title: {lesson.title}</p>
                   <img src={lesson.img} alt={lesson.title} />
+                  <p>{lesson.title}</p>
                 </li>
               ))}
             </ul>

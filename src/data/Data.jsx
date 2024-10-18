@@ -19,7 +19,7 @@ import travelImg from "../assets/list/travel.png";
 import writingReportImg from "../assets/list/writing-report.png";
 
 
-const data = [
+const topics = [
   {
     id: "jobSearching",
     title: "Job Searching",
@@ -246,4 +246,4 @@ const data = [
   },
 ];
 
-export default data;
+export default topics;
