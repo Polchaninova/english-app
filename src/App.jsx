@@ -1,28 +1,34 @@
 import { ThemeProvider } from "@emotion/react";
-import StartPage from "./pages/start/Start";
-import TopicList from "./pages/topicList/TopicList";
+// import StartPage from "./pages/start/Start";
+import TopicsPage from "./pages/topicsPage/TopicsPage";
 import { createTheme, CssBaseline } from "@mui/material";
 import StyledBox from "./components/themeYellow";
-import HandleFilter from "./components/function/filter";
+// import HandleFilter from "./components/function/filter";
 const theme = createTheme({
   typography: {
     fontFamily: '"Montserrat", "Arial", sans-serif',
     h1: {
       fontFamily: '"Montserrat", "Arial", sans-serif',
       fontSize: "2rem",
-      fontWeight: 500,
+      fontWeight: 700,
       color: "#ffff",
     },
     h2: {
       fontFamily: '"Montserrat", "Arial", sans-serif',
       fontSize: "1.5rem",
-      fontWeight: 400,
+      fontWeight: 600,
     },
     h3: {
       fontFamily: '"Montserrat", "Arial", sans-serif',
-      fontSize: "1rem",
+      fontSize: "1.2rem",
       fontWeight: 500,
-      color: "#0E54CD",
+      color: "#17161C",
+    },
+    h4: {
+      fontFamily: '"Montserrat", "Arial", sans-serif',
+      fontSize: "1.1rem",
+      fontWeight: 400,
+      color: "#17161C",
     },
     subtitle1: {
       // EN, UK
@@ -38,14 +44,15 @@ const theme = createTheme({
     },
     body1: {
       // Translate word in card
-      fontSize: "1rem",
+      fontSize: "0.875rem",
       color: "#17161C",
-      fontWeight: 600,
+      fontWeight: 900,
     },
     body2: {
       // example sentence in card
       fontSize: "1rem",
       color: "#17161C",
+      fontWeight: 400,
     },
   },
 });
@@ -58,7 +65,7 @@ function App() {
         <StyledBox>
           {/* <HandleFilter /> */}
           {/* <StartPage /> */}
-          <TopicList />
+          <TopicsPage />
         </StyledBox>
       </ThemeProvider>
     </>
@@ -66,3 +73,4 @@ function App() {
 }
 
 export default App;
+

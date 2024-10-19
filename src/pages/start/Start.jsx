@@ -11,14 +11,6 @@ function Start() {
   return (
     <Box
       align="center"
-      // sx={{
-      //   pt: 8,
-      //   pb: 8,
-      //   width: "100%",
-      //   height: "100vh",
-      //   backgroundColor: "#FFF6D3",
-      //   margin: 0,
-      // }}
     >
       <Box component="img" src={StartImg} alt="React Logo" sx={{ mb: 2 }}></Box>
       <Typography

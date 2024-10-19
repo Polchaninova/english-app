@@ -8,8 +8,8 @@ const StyledBox = styled(Box)(({ theme }) => ({
   paddingRight: 16,
   width: "100%",
   height: "100vh",
-  backgroundColor: "#FFF6D3",
-  margin: 0,
+  backgroundColor: "#c6e8ff",
+  // margin: auto,
 }));
 
 export default StyledBox;
